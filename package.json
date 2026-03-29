@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng build --base-href \"/angular-material-dashboard/\" && find dist/material-dashboard/browser -name \"*.css\" -o -name \"*.js\" | xargs sed -i '' 's|/assets/|/angular-material-dashboard/assets/|g' && npx angular-cli-ghpages --dir=dist/material-dashboard/browser"
   },
   "private": true,
   "packageManager": "npm@11.4.0",
