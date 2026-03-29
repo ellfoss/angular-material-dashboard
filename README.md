@@ -1,59 +1,59 @@
-# MaterialDashboard
+# Material Dashboard
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.3.
+Многостраничный SPA-дашборд, реализованный на Angular 21. Проект охватывает несколько предметных областей и демонстрирует построение масштабируемой структуры приложения с единой дизайн-системой на LESS.
 
-## Development server
+## Скриншоты
 
-To start a local development server, run:
+<!-- TODO: добавить скриншоты после деплоя -->
+<!-- Пример:
+![Dashboard](docs/screenshots/dashboard.png)
+![Smart Home](docs/screenshots/smart-home.png)
+![Automotive](docs/screenshots/automotive.png)
+-->
 
-```bash
-ng serve
-```
+## Страницы
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+| Страница | Описание |
+|---|---|
+| **Dashboard** | Аналитика: stat-карточки, линейные и барные графики (Chart.js), таблица продуктов |
+| **Smart Home** | Управление умным домом: устройства, камера, потребление энергии, метеостанция |
+| **Automotive** | Панель автомобиля: статистика, GPS-карта, музыкальный плеер |
+| **Billing** | Финансы: кредитные карты, транзакции, инвойсы, платёжные виджеты |
+| **Profile** | Профиль пользователя: настройки платформы, переписки, проекты |
+| **Notifications** | Алерты и toast-уведомления |
+| **Sign In / Sign Up** | Страницы авторизации |
 
-## Code scaffolding
+## Стек
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- **Angular 21** — standalone components, signals, Angular Router с lazy loading
+- **LESS** — компонентные стили, единая система переменных и миксинов
+- **Chart.js 4** — кастомные плагины (пунктирная сетка, точка на конце линии, doughnut gauge)
+- **TypeScript 5.9**
 
-```bash
-ng generate component component-name
-```
+## Архитектурные решения
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- **Feature-based структура** — каждая фича изолирована: компонент, интерфейсы, сервис, дочерние компоненты
+- **Shell layout** — `ShellComponent` оборачивает все аутентифицированные страницы (sidebar + navbar + footer); auth-страницы рендерятся вне Shell
+- **Статические данные через сервисы** — все данные хранятся в `*-data.service.ts`, компоненты не содержат хардкода
+- **LESS дизайн-система** — единые переменные (`@sm`, `@bold`, `@green` и др.) и миксины (`.font()`, `.card()`, `.label()`, `.title()` и др.) вместо magic-чисел
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+## Запуск локально
 
 ```bash
-ng e2e
+npm install
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Приложение откроется на `http://localhost:4200`.
 
-## Additional Resources
+## Сборка
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash
+npm run build
+```
+
+Артефакты сборки — в папке `dist/`.
+
+## Автор
+
+[ellfoss](https://github.com/ellfoss)

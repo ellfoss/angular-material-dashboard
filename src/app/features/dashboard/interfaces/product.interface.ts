@@ -1,7 +1,7 @@
 export interface IProduct {
-  gradient: string;
+  avatar: string;
   name: string;
-  orders: string;
+  orders: number;
   value: string;
   adsSpent: string;
   refunds: number;

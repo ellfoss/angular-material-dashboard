@@ -8,59 +8,55 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 19px;
 }
 
 .section-title {
-  font-size: @font-size-md;
-  font-weight: @font-weight-bold;
-  color: var(--color-text-primary);
+  .font(@md, @bold, @text-primary);
 }
 
 .edit-icon {
-  font-size: @font-size-xl;
-  color: var(--color-text-secondary);
+  font-size: @xxl;
+  color: @text-primary;
   cursor: pointer;
 }
 
 .bio {
-  font-size: @font-size-base;
-  color: var(--color-text-secondary);
-  line-height: 1.6;
+  .caption();
   margin-bottom: 16px;
 }
 
 .divider {
   border: none;
-  border-top: 1px solid var(--color-medium-grey);
-  margin-bottom: 16px;
+  height: 1px;
+  background: @cloud;
+  margin-top: 23px;
+  margin-bottom: 26px;
 }
 
 .info-row {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 
   & + & {
-    margin-top: 12px;
+    margin-top: 16px;
   }
 }
 
 .info-label {
-  font-size: @font-size-base;
-  font-weight: @font-weight-bold;
-  color: var(--color-text-primary);
+  .label();
 }
 
 .info-value {
-  font-size: @font-size-base;
-  color: var(--color-text-secondary);
+  .caption();
 }
 
 .social-icons {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 14px;
+  margin-left: 5px;
 
   img {
     width: 18px;

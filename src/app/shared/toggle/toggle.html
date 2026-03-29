@@ -1,5 +1,5 @@
 <label class="toggle">
-  <input type="checkbox" [checked]="checked()" />
+  <input type="checkbox" [checked]="checked()" (click)="$event.stopPropagation()" />
   <span class="toggle-track">
     <span class="toggle-thumb"></span>
   </span>

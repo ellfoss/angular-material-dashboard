@@ -1,15 +1,12 @@
 <h6 class="section-title">Conversations</h6>
 
-@for (item of conversations; track item.name; let last = $last) {
+@for (item of conversations; track item.name) {
   <div class="conversation-row">
     <img class="avatar" [src]="item.avatar" [alt]="item.name" />
     <div class="content">
       <span class="name">{{ item.name }}</span>
       <span class="message">{{ item.message }}</span>
     </div>
-    <button class="reply-btn" [class]="item.replyColor">REPLY</button>
+    <button class="reply-btn">REPLY</button>
   </div>
-  @if (!last) {
-    <hr class="divider" />
-  }
 }

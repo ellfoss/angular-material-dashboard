@@ -11,8 +11,8 @@
       <p class="group-label">{{ group.label }}</p>
       @for (item of group.items; track item.name) {
         <div class="transaction-row">
-          <div class="transaction-icon" [style.background]="item.color">
-            {{ item.initial }}
+          <div class="transaction-icon" [style.border-color]="'var(--color-' + item.color + ')'">
+            <span class="material-icons" [style.color]="'var(--color-' + item.color + ')'">{{ item.icon }}</span>
           </div>
           <div class="transaction-info">
             <span class="transaction-name">{{ item.name }}</span>

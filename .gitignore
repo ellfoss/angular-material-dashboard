@@ -39,6 +39,11 @@ testem.log
 /typings
 __screenshots__/
 
+# Agent files
+.agent/
+.claude/
+CLAUDE.md
+
 # System files
 .DS_Store
 Thumbs.db

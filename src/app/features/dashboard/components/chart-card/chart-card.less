@@ -1,9 +1,7 @@
 @import (reference) "variables";
 
 :host {
-  background: white;
-  border-radius: var(--card-min-radius);
-  box-shadow: var(--drop-shadow-black);
+  .card(@radius: var(--card-min-radius));
   margin-top: 24px;
 }
 
@@ -29,32 +27,30 @@
 }
 
 .chart-title {
-  .font-md-bold();
-  color: var(--color-text-primary);
+  .font(@md, @bold, @text-primary);
   margin-bottom: 3px;
 }
 
 .chart-subtitle {
-  font-size: @font-size-base;
-  color: var(--color-text-secondary);
+  .caption();
 
   .positive {
-    font-weight: @font-weight-bold;
+    font: @bold;
   }
 }
 
 .chart-divider {
   height: 1px;
-  background: var(--color-background);
+  background: @background;
   margin: 16px -7px;
 }
 
 .chart-meta {
-  color: var(--color-text-secondary);
+  .caption();
 
   .material-icons {
     display: inline-block;
-    font-size: @font-size-base;
+    font-size: @base;
     margin-right: 4px;
   }
 }

@@ -6,7 +6,9 @@
     </span>
   </div>
   <div class="card-body">
-    <span class="material-icons device-icon">{{ device().icon }}</span>
+    <div class="device-image-wrap">
+      <img class="device-image" [src]="device().image" [alt]="device().name" />
+    </div>
     <p class="device-name">{{ device().name }}</p>
     <p class="device-status">{{ device().status }}</p>
   </div>

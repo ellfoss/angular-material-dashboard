@@ -1,22 +1,18 @@
-.card {
-  background: white;
-  border-radius: var(--card-radius);
-  box-shadow: var(--drop-shadow-black);
-}
+@import (reference) "variables";
 
-.card-header {
-  padding: 20px 24px 0;
+:host {
+  display: block;
+  .card();
 }
 
 .card-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text-primary);
+  padding: 28px 24px 0;
+  margin-bottom: 10px;
+  .font(@md, @bold, @text-primary);
 }
 
 .table-wrap {
   overflow-x: auto;
-  padding: 0 8px 8px;
 }
 
 .table {
@@ -25,21 +21,18 @@
 
   th {
     text-align: left;
-    font-size: 10px;
-    font-weight: 700;
+    .font(@size: @xs, @weight: @bold);
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--color-text-secondary);
-    padding: 12px 16px 8px;
-    border-bottom: 1px solid var(--color-background);
+    padding: 12px 24px 14px;
+    border-bottom: 1px solid @background;
   }
 
   td {
-    padding: 12px 16px;
-    color: var(--color-text-primary);
-    font-size: 13px;
+    height: 74px;
+    padding: 12px 24px;
+    .font(@color: @text-primary);
     vertical-align: middle;
-    border-bottom: 1px solid var(--color-background);
+    border-bottom: 1px solid @background;
   }
 
   tr:last-child td {
@@ -50,46 +43,50 @@
 .product-cell {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 }
 
 .product-avatar {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  object-fit: cover;
   flex-shrink: 0;
 }
 
 .product-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 1px;
 }
 
 .product-name {
-  font-weight: 600;
-  color: var(--color-text-primary);
+  .label();
 }
 
 .product-orders {
-  font-size: 12px;
-  color: var(--color-blue);
+  .caption();
+
+  mark {
+    background: unset;
+    color: @green;
+  }
 }
 
 .refund-cell {
-  display: flex;
-  align-items: center;
-  gap: 2px;
+  max-width: 40px;
+  text-align: right;
 }
 
 .refund-icon {
-  font-size: 16px !important;
+  font-size: @md;
+  vertical-align: top;
 
   &.up {
-    color: var(--color-red-orange);
+    color: @red-orange;
   }
 
   &.down {
-    color: var(--color-text-secondary);
+    color: @green;
   }
 }

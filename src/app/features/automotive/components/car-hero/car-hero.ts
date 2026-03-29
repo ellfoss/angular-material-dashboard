@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 
+import { ILocationBlock, IMetricsBlock } from '../../interfaces';
 import { AutomotiveDataService } from '../../services';
 
 @Component({
@@ -10,5 +11,6 @@ import { AutomotiveDataService } from '../../services';
 export class CarHeroComponent {
   private readonly automotiveDataService: AutomotiveDataService = inject(AutomotiveDataService);
 
-  readonly chargeInfo = this.automotiveDataService.chargeInfo;
+  readonly sinceLastCharge: IMetricsBlock = this.automotiveDataService.chargeInfo.sinceLastCharge;
+  readonly nearestCharger: ILocationBlock = this.automotiveDataService.chargeInfo.nearestCharger;
 }

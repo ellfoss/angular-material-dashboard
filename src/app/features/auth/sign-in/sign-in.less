@@ -7,61 +7,55 @@
   min-height: 100vh;
   background:
     linear-gradient(rgba(79, 79, 82, 0.5), rgba(79, 79, 82, 0.5)),
-    url('assets/images/sign-in-bg.png') center / cover no-repeat;
+    url('/assets/images/sign-in-bg.png') center / cover no-repeat;
 }
 
 .card {
-  width: 340px;
-  background: var(--color-white);
-  border-radius: var(--card-radius);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  overflow: hidden;
+  width: 408px;
+  .card();
+  padding: 0 24px 40px;
 }
 
 .card-header {
-  background: var(--gradient-red);
-  padding: 24px 24px 32px;
+  .card(var(--gradient-red), var(--card-min-radius), var(--drop-shadow-red));
+  padding: 24px 24px 46px;
+  margin: -24px -8px 0;
   text-align: center;
 }
 
 .title {
-  font-size: @font-size-lg;
-  font-weight: @font-weight-bold;
-  color: var(--color-white);
-  margin-bottom: 20px;
+  .font(@xl, @bold, @white);
+  margin-bottom: 27px;
 }
 
 .socials {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 50px;
 }
 
 .social-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--color-white);
+  background: none;
   border: none;
-  box-shadow: var(--drop-shadow-black);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 
   img {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     object-fit: contain;
   }
 
   &:hover {
-    background: var(--color-cloud);
+    opacity: 0.8;
   }
 }
 
 .card-body {
-  padding: 24px;
+  padding-top: 40px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -70,19 +64,18 @@
 .input {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid var(--color-snow);
+  border: 1px solid @dark-snow;
   border-radius: var(--card-min-radius);
-  font-size: @font-size-sm;
-  color: var(--color-text-primary);
+  .font(@color: @text-primary);
   outline: none;
   box-sizing: border-box;
 
   &::placeholder {
-    color: var(--color-text-secondary);
+    color: @text;
   }
 
   &:focus {
-    border-color: var(--color-light-grey);
+    border-color: @light-grey;
   }
 }
 
@@ -92,61 +85,22 @@
   gap: 8px;
 }
 
-.toggle {
-  position: relative;
-  width: 34px;
-  height: 18px;
-  flex-shrink: 0;
-  cursor: pointer;
-
-  input {
-    display: none;
-  }
-}
-
-.slider {
-  position: absolute;
-  inset: 0;
-  background: var(--color-snow);
-  border-radius: 9px;
-  transition: background 0.2s;
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--color-white);
-    top: 3px;
-    left: 3px;
-    transition: transform 0.2s;
-    box-shadow: var(--drop-shadow-black);
-  }
-}
-
-.toggle input:checked + .slider {
-  background: var(--color-red);
-}
-
-.toggle input:checked + .slider::after {
-  transform: translateX(16px);
+app-toggle {
+  margin-left: 4px;
 }
 
 .remember-label {
-  font-size: @font-size-sm;
-  color: var(--color-text-secondary);
+  .font(@sm);
 }
 
 .sign-in-btn {
+  margin-top: 26px;
   width: 100%;
   height: 40px;
   background: var(--gradient-red);
   border: none;
   border-radius: var(--card-min-radius);
-  color: var(--color-white);
-  font-size: @font-size-sm;
-  font-weight: @font-weight-bold;
+  .font(@sm, @bold, @white);
   cursor: pointer;
 
   &:hover {
@@ -155,14 +109,13 @@
 }
 
 .signup-text {
+  margin-top: 15px;
   text-align: center;
-  font-size: @font-size-sm;
-  color: var(--color-text-secondary);
+  .caption();
 }
 
 .signup-link {
-  color: var(--color-red);
-  font-weight: @font-weight-bold;
+  .font(@weight: @bold, @color: @red);
   text-decoration: none;
 
   &:hover {

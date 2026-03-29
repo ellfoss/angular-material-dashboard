@@ -1,26 +1,32 @@
+@import (reference) "variables";
+
 :host {
-  display: block;
+  width: 100%;
+  max-width: 844px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 .section-card {
-  background: white;
-  border-radius: var(--card-radius);
-  box-shadow: var(--drop-shadow-black);
-  padding: 25px;
+  .card();
+  padding: 16px;
 }
 
 .section-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--color-text-primary);
-  margin-bottom: 16px;
+  .font(@lg, @bold, @text-primary);
+}
+
+.section-subtitle {
+  .caption();
 }
 
 .alerts-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-bottom: 32px;
+  gap: 16px;
+  margin-top: 34px;
 }
 
 .alert {
@@ -28,67 +34,45 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 12px 16px;
+  padding: 18px 16px;
   border-radius: var(--card-min-radius);
-  color: white;
-
-  &-red    { background-color: #f44336; }
-  &-orange { background-color: #ff9800; }
-  &-green  { background-color: #4caf50; }
-  &-teal   { background-color: #00bcd4; }
-  &-blue   { background-color: #2196f3; }
-  &-purple { background-color: #9c27b0; }
-  &-dark   { background-color: #212121; }
 }
 
 .alert-text {
-  font-size: 14px;
-}
+  .font(@color: @white);
 
-.alert-link {
-  color: white;
-  font-weight: 700;
-  text-decoration: underline;
-}
-
-.alert-dismiss {
-  color: white;
-  flex-shrink: 0;
-
-  .material-icons {
-    font-size: 18px;
+  a {
+    text-decoration: none;
+    font: @bold;
   }
 }
 
-.section-subtitle {
-  font-size: 14px;
-  color: var(--color-text-secondary);
-  margin-bottom: 20px;
-}
+.alert-dismiss {
+  .font(@color: @white);
+  flex-shrink: 0;
 
-.subtitle-link {
-  color: var(--color-blue);
+  .material-icons {
+    font-size: @icon;
+  }
 }
 
 .notification-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 34px;
 }
 
 .btn-notify {
-  padding: 8px 20px;
+  padding: 12px 16px;
   border-radius: var(--card-min-radius);
-  font-size: 12px;
-  font-weight: 700;
+  .font(@sm, @bold, @white);
   text-transform: uppercase;
-  color: white;
-  letter-spacing: 0.5px;
 
-  &-success { background: var(--gradient-green); box-shadow: var(--drop-shadow-green); }
-  &-info    { background: var(--gradient-blue); box-shadow: var(--drop-shadow-blue); }
-  &-warning { background: var(--gradient-orange); }
-  &-danger  { background: var(--gradient-red); box-shadow: var(--drop-shadow-red); }
+  &-success { background: @green; }
+  &-info    { background: @blue; }
+  &-warning { background: @orange; }
+  &-danger  { background: @red-orange; }
 }
 
 .toasts-container {
@@ -109,23 +93,21 @@
   min-width: 280px;
   padding: 14px 16px;
   border-radius: var(--card-min-radius);
-  color: white;
   box-shadow: var(--drop-shadow-black);
   animation: toast-in 0.3s ease;
 
-  &-success { background: var(--gradient-green); }
-  &-info    { background: var(--gradient-blue); }
-  &-warning { background: var(--gradient-orange); }
-  &-danger  { background: var(--gradient-red); }
+  &-success { background: @green; }
+  &-info    { background: @blue; }
+  &-warning { background: @orange; }
+  &-danger  { background: @red-orange; }
 }
 
 .toast-message {
-  font-size: 14px;
-  font-weight: 500;
+  .font(@color: @white);
 }
 
 .toast-close {
-  color: white;
+  .font(@color: @white);
   flex-shrink: 0;
   opacity: 0.8;
 
@@ -134,7 +116,7 @@
   }
 
   .material-icons {
-    font-size: 18px;
+    font-size: @icon;
   }
 }
 

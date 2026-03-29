@@ -26,7 +26,6 @@ export class SidebarComponent {
           expanded: true,
           children: [
             { label: 'Analytics', letter: 'A', route: '/dashboard' },
-            { label: 'Automotive', letter: 'A', route: '/automotive' },
             { label: 'Smart Home', letter: 'S', route: '/smart-home' },
           ],
         },
@@ -40,8 +39,9 @@ export class SidebarComponent {
           icon: 'image',
           expanded: false,
           children: [
-            { label: 'Profile', letter: 'P', route: '/profile' },
+            { label: 'Automotive', letter: 'A', route: '/automotive' },
             { label: 'Notifications', letter: 'N', route: '/notifications' },
+            { label: 'Profile', letter: 'P', route: '/profile' },
           ],
         },
         { label: 'Applications', icon: 'apps', expanded: false, children: [] },

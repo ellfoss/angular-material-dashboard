@@ -5,26 +5,26 @@
 
   &.active .card {
     background: var(--gradient-red);
-    box-shadow: var(--drop-shadow-red);
   }
 
-  &.active .state-label,
-  &.active .device-name,
+  &.active .state-label {
+    color: @white;
+  }
+
+  &.active .device-name {
+    color: @white;
+  }
+
   &.active .device-status {
-    color: var(--color-white);
+    color: @white;
   }
 
-  &.active .device-icon {
-    color: var(--color-white);
-  }
 }
 
 .card {
-  background: var(--color-white);
-  border-radius: var(--card-radius);
-  box-shadow: var(--drop-shadow-grey);
-  padding: 16px;
-  transition: background @transition-default, box-shadow @transition-default;
+  .card();
+  padding: 22px 32px 32px 24px;
+  transition: background @transition, box-shadow @transition;
 }
 
 .card-top {
@@ -35,8 +35,8 @@
 }
 
 .state-label {
-  font-size: @font-size-sm;
-  color: var(--color-text-secondary);
+  .font(@md);
+  margin-bottom: 20px;
 }
 
 .toggle-hit {
@@ -50,18 +50,23 @@
   gap: 6px;
 }
 
-.device-icon {
-  font-size: @font-size-xxl;
-  color: var(--color-text-primary);
+.device-image-wrap {
+  min-height: 63px;
+  display: flex;
+  align-items: center;
+}
+
+.device-image {
+  display: block;
+  object-fit: none;
 }
 
 .device-name {
-  font-size: @font-size-base;
-  font-weight: @font-weight-bold;
-  color: var(--color-text-primary);
+  .font(@md, @bold);
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 .device-status {
-  font-size: @font-size-sm;
-  color: var(--color-text-secondary);
+  .font(@sm);
 }

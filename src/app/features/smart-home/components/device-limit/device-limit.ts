@@ -1,9 +1,22 @@
 import { Component, inject } from '@angular/core';
 
+import { Chart, DoughnutController } from 'chart.js';
+
+import { ChartComponent, IChartConfig } from '../../../../shared';
 import { SmartHomeDataService } from '../../services';
+
+Chart.register(DoughnutController);
+
+const ROTATION = 210;
+const CIRCUMFERENCE = 300;
+
+function cssVar(name: string): string {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
 
 @Component({
   selector: 'app-device-limit',
+  imports: [ChartComponent],
   templateUrl: './device-limit.html',
   styleUrl: './device-limit.less',
 })
@@ -16,23 +29,28 @@ export class DeviceLimitComponent {
     return (value - min) / (max - min);
   }
 
-  private get angle(): number {
-    return Math.PI * (1 - this.pct);
-  }
-
-  get progressEndX(): string {
-    return (100 + 80 * Math.cos(this.angle)).toFixed(2);
-  }
-
-  get progressEndY(): string {
-    return (90 + 80 * Math.sin(this.angle)).toFixed(2);
-  }
-
-  get largeArcFlag(): number {
-    return this.pct > 0.5 ? 1 : 0;
-  }
-
-  get progressArcD(): string {
-    return `M 20 90 A 80 80 0 ${this.largeArcFlag} 0 ${this.progressEndX} ${this.progressEndY}`;
-  }
+  readonly chartConfig: IChartConfig<'doughnut'> = {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        data: [this.pct * 100, (1 - this.pct) * 100],
+        backgroundColor: [cssVar('--color-red'), cssVar('--color-dark-snow')],
+        borderWidth: 0,
+        hoverOffset: 0,
+      }],
+    },
+    options: {
+      rotation: ROTATION,
+      circumference: CIRCUMFERENCE,
+      cutout: '96%',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { enabled: false },
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        ['endDot' as any]: { enabled: true, radius: 6, color: cssVar('--color-red') },
+      },
+    },
+  };
 }

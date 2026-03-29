@@ -5,24 +5,26 @@
 }
 
 .section-title {
-  font-size: @font-size-md;
-  font-weight: @font-weight-bold;
-  color: var(--color-text-primary);
   margin-bottom: 19px;
 }
 
 .conversation-row {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
+
+  & + & {
+    margin-top: 24px;
+  }
 }
 
 .avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
   object-fit: cover;
   flex-shrink: 0;
+  box-shadow: var(--drop-shadow-black);
 }
 
 .content {
@@ -33,14 +35,11 @@
 }
 
 .name {
-  font-size: @font-size-base;
-  font-weight: @font-weight-bold;
-  color: var(--color-text-primary);
+  .label();
 }
 
 .message {
-  font-size: @font-size-sm;
-  color: var(--color-text-secondary);
+  .font(@sm);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -48,43 +47,10 @@
 
 .reply-btn {
   flex-shrink: 0;
-  padding: 4px 12px;
+  padding: 0;
   border: none;
-  border-radius: @card-min-radius;
-  font-size: @font-size-sm;
-  font-weight: @font-weight-bold;
-  color: var(--color-white);
+  background: none;
+  .font(@sm, @bold, @red);
   cursor: pointer;
-
-  &.black {
-    background: var(--gradient-black);
-    box-shadow: var(--drop-shadow-black);
-  }
-
-  &.red {
-    background: var(--gradient-red);
-    box-shadow: var(--drop-shadow-red);
-  }
-
-  &.green {
-    background: var(--gradient-green);
-    box-shadow: var(--drop-shadow-green);
-  }
-
-  &.blue {
-    background: var(--gradient-blue);
-    box-shadow: var(--drop-shadow-blue);
-  }
-
-  &.orange {
-    background: var(--gradient-orange);
-    box-shadow: 0 2px 6px 0 rgba(251, 140, 0, 0.36);
-  }
 }
 
-.divider {
-  border: none;
-  height: 1px;
-  background: var(--color-snow);
-  margin: 14px 0;
-}

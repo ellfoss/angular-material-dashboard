@@ -3,41 +3,35 @@
 :host {
   display: flex;
   flex-direction: column;
-  background: var(--color-white);
+  background: @white;
   border-radius: var(--card-radius);
-  box-shadow: var(--drop-shadow-grey);
-  overflow: hidden;
 }
 
 .card-image {
   width: 100%;
-  height: 174px;
+  aspect-ratio: 244 / 138;
   object-fit: cover;
+  border-radius: var(--card-radius);
 }
 
 .card-body {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 16px;
+  padding: 16px 0;
 }
 
 .project-number {
-  font-size: @font-size-sm;
-  color: var(--color-text-secondary);
-  margin-bottom: 4px;
+  .caption();
 }
 
 .project-name {
-  font-size: @font-size-base;
-  font-weight: @font-weight-bold;
-  color: var(--color-text-primary);
-  margin-bottom: 8px;
+  .font(@lg, @bold, @text-primary);
+  margin-bottom: 9px;
 }
 
 .project-description {
-  font-size: @font-size-sm;
-  color: var(--color-text-secondary);
+  .caption();
   flex: 1;
 }
 
@@ -45,36 +39,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 16px;
+  margin-top: 29px;
+}
+
+.view-btn {
+  height: 33px;
+  padding: 6px 16px;
+  border: 1px solid @red;
+  border-radius: var(--card-min-radius);
+  background: none;
+  .font(@sm, @bold, @red);
+  cursor: pointer;
+
+  &:hover {
+    background: @cloud;
+  }
 }
 
 .participants {
   display: flex;
 
   .participant-avatar {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
-    border: 2px solid var(--color-white);
+    border: 1px solid @white;
     object-fit: cover;
 
     & + .participant-avatar {
-      margin-left: -8px;
+      margin-left: -10px;
     }
-  }
-}
-
-.view-btn {
-  padding: 6px 16px;
-  border: 1px solid var(--color-medium-grey);
-  border-radius: var(--card-min-radius);
-  background: none;
-  font-size: @font-size-sm;
-  font-weight: @font-weight-bold;
-  color: var(--color-text-primary);
-  cursor: pointer;
-
-  &:hover {
-    background: var(--color-cloud);
   }
 }

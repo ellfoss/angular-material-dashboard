@@ -1,6 +1,8 @@
-<div class="weather-top">
+<div class="left">
   <span class="weather-label">Weather Today</span>
-  <img src="/assets/images/weather-sunny.png" alt="Weather" class="weather-icon" />
+  <span class="city-temp">{{ weather().city }} — {{ weather().temperature }}°C</span>
 </div>
-<span class="weather-city">{{ weather().city }} - {{ weather().temperature }}°C</span>
-<span class="weather-condition">{{ weather().condition }}</span>
+<div class="right">
+  <img class="weather-icon" src="/assets/images/weather-sunny.png" alt="Sunny" />
+  <span class="condition">{{ weather().condition }}</span>
+</div>

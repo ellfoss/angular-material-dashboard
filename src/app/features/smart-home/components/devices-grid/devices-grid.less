@@ -1,34 +1,34 @@
 @import (reference) "variables";
 
 :host {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 24px;
 }
 
+app-device-card,
 .new-device-card {
-  border-radius: var(--card-radius);
-  border: 2px dashed var(--color-medium-grey);
+  flex: 1;
+  min-width: 0;
+}
+
+.new-device-card {
+  .card();
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 9px;
   cursor: pointer;
   min-height: 130px;
-  transition: border-color @transition-default;
-
-  &:hover {
-    border-color: var(--color-text-secondary);
-  }
 }
 
 .add-icon {
-  font-size: @font-size-xl;
-  color: var(--color-text-secondary);
+  font-size: @xl;
+  color: @text;
 }
 
 .new-label {
-  font-size: @font-size-sm;
-  color: var(--color-text-secondary);
+  .font(@lg, @bold);
 }

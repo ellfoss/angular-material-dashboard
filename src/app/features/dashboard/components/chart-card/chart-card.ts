@@ -76,6 +76,8 @@ export class ChartCardComponent {
         plugins: {
           legend: { display: false },
           tooltip: { mode: 'index' },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          ...(!isBar ? { ['dashedGrid' as any]: { verticalLines: false } } : {}),
         },
         scales: {
           x: {

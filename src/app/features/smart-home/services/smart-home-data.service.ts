@@ -5,10 +5,10 @@ import { IConsumptionItem, IDevice, IHomeStatItem } from '../interfaces';
 @Injectable({ providedIn: 'root' })
 export class SmartHomeDataService {
   readonly stats: IHomeStatItem[] = [
-    { value: '21', unit: '°C', label: 'Temperature', sublabel: 'Living Room', color: 'red' },
-    { value: '44', unit: '%', label: 'Humidity', sublabel: 'Outside', color: 'red' },
-    { value: '87', unit: 'm³', label: 'Water', sublabel: 'Consumption', color: 'blue' },
-    { value: '417', unit: 'kW', label: 'Internet', sublabel: 'All devices', color: 'blue' },
+    { value: '21', unit: '°C', label: 'Living Room', sublabel: 'Temperature' },
+    { value: '44', unit: '%', label: 'Outside', sublabel: 'Humidity' },
+    { value: '87', unit: 'm³', label: 'Water', sublabel: 'Consumption' },
+    { value: '417', unit: 'kW', label: 'Internet', sublabel: 'All devices' },
   ];
 
   readonly weather = {
@@ -19,33 +19,33 @@ export class SmartHomeDataService {
 
   readonly barChartData = {
     labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    data: [20, 35, 25, 30, 50, 35, 45],
+    data: [26, 29, 28, 32, 29, 28, 30],
   };
 
   readonly deviceLimit = {
     value: 21,
-    min: 14,
-    max: 30,
-    temperature: 31.5,
-    humidity: 27,
+    min: 16,
+    max: 38,
+    temperature: 21,
+    humidity: 57,
   };
 
   readonly consumptionTotal = 471.3;
 
   readonly consumptionItems: IConsumptionItem[] = [
-    { label: 'Living Room', color: '#e91f63', watts: 165, percentage: 35 },
-    { label: 'Kitchen', color: '#344767', watts: 94, percentage: 20 },
-    { label: 'Attic', color: '#17c1e8', watts: 71, percentage: 15 },
-    { label: 'Garage', color: '#82d616', watts: 80, percentage: 17 },
-    { label: 'Basement', color: '#fb8c00', watts: 61, percentage: 13 },
+    { label: 'Living Room', color: 'var(--color-red)', percentage: 15 },
+    { label: 'Kitchen', color: 'var(--color-dark-blue)', percentage: 20 },
+    { label: 'Attic', color: 'var(--color-blue)', percentage: 13 },
+    { label: 'Garage', color: 'var(--color-green)', percentage: 32 },
+    { label: 'Basement', color: 'var(--color-orange)', percentage: 20 },
   ];
 
   readonly devices = signal<IDevice[]>([
-    { id: 1, name: 'Humidity', icon: 'water_drop', active: false, status: 'Inactive since: 3 days' },
-    { id: 2, name: 'Humidity', icon: 'water_drop', active: true, status: 'Inactive since: 3 days' },
-    { id: 3, name: 'Humidity', icon: 'water_drop', active: false, status: 'Inactive since: 3 days' },
-    { id: 4, name: 'Humidity', icon: 'water_drop', active: false, status: 'Inactive since: 3 days' },
-    { id: 5, name: 'Humidity', icon: 'wifi', active: true, status: 'Inactive since: 3 days' },
+    { id: 1, name: 'Humidity', image: '/assets/images/device-humidity.png', active: false, status: 'Inactive since: 3 days' },
+    { id: 2, name: 'Temperature', image: '/assets/images/device-temperature.png', active: true, status: 'Inactive since: 3 days' },
+    { id: 3, name: 'Air Condition', image: '/assets/images/device-air-condition.png', active: false, status: 'Inactive since: 3 days' },
+    { id: 4, name: 'Sensor', image: '/assets/images/device-sensor.png', active: false, status: 'Inactive since: 3 days' },
+    { id: 5, name: 'Wi-Fi', image: '/assets/images/device-wifi.png', active: true, status: 'Inactive since: 3 days' },
   ]);
 
   toggleDevice(id: number): void {

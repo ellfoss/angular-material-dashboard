@@ -1,3 +1,5 @@
+@import (reference) "variables";
+
 :host {
   display: block;
   width: var(--sidebar-width);
@@ -8,7 +10,7 @@
   left: 16px;
   bottom: 16px;
   overflow: hidden;
-  transition: width var(--sidebar-transition), left var(--sidebar-transition);
+  transition: width @transition, left @transition;
 
   &.hidden {
     width: 0;
@@ -26,7 +28,6 @@
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
-  color: white;
 }
 
 .sidebar-brand {
@@ -42,8 +43,7 @@
 }
 
 .brand-name {
-  font-size: 14px;
-  font-weight: 700;
+  .font(@base, @bold, @white);
 }
 
 .sidebar-divider {
@@ -71,17 +71,15 @@
 
 .user-name {
   flex: 1;
-  font-size: 14px;
-  font-weight: 300;
+  .font(@base, @light, @white);
 }
 
 .user-chevron {
-  font-size: 18px;
+  font-size: @icon;
 }
 
 .section-title {
-  font-size: 12px;
-  font-weight: 700;
+  .font(@sm, @bold, @white);
   text-transform: uppercase;
   padding: 11px 0;
 }
@@ -101,9 +99,7 @@
   height: 48px;
   padding: 0 8px;
   border-radius: 4px;
-  color: white;
-  font-size: 13px;
-  font-weight: 400;
+  .font(@base, @normal, @white);
   font-family: inherit;
   transition: background 0.2s;
   cursor: pointer;
@@ -115,13 +111,12 @@
   }
 
   &.group-active {
-    color: white;
+    color: @white;
   }
 
   &.active {
-    background: var(--color-red);
-    color: white;
-    font-weight: 600;
+    background: @red;
+    color: @white;
   }
 }
 
@@ -132,16 +127,14 @@
   flex-shrink: 0;
 
   .material-icons {
-    font-size: 18px;
+    font-size: @icon;
   }
 }
 
 .nav-letter {
   width: 28px;
   height: 28px;
-  color: white;
-  font-size: 11px;
-  font-weight: 700;
+  .font(@sm, @bold, @white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,8 +146,8 @@
 }
 
 .nav-chevron {
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.5);
+  .font(@color: rgba(255, 255, 255, 0.5));
+  font-size: @icon;
   transition: transform 0.2s;
 
   &.rotated {
@@ -171,8 +164,7 @@
 
 .nav-child {
   &.child-active {
-    background: var(--color-red);
-    color: white;
-    font-weight: 600;
+    background: @red;
+    color: @white;
   }
 }

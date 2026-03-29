@@ -1,23 +1,55 @@
+@import (reference) "variables";
+
 :host {
   display: block;
   background: var(--gradient-black);
+  background-image: url('/assets/images/mask.png'), var(--gradient-black);
+  background-size: cover, cover;
+  background-position: center, center;
   border-radius: var(--card-radius);
   box-shadow: var(--drop-shadow-black);
-  padding: 24px;
-  color: white;
-  min-width: 280px;
+  padding: 24px 16px 18px;
+  width: 410px;
+  flex-shrink: 0;
 }
 
 .card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 30px;
 }
 
 .wifi-icon {
-  font-size: 28px !important;
-  opacity: 0.8;
+  font-size: @xxl;
+}
+
+.card-number {
+  .font(@lg, @bold, @white);
+  margin-bottom: 56px;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-bottom-left {
+  display: flex;
+  gap: 24px;
+}
+
+.card-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.card-label {
+  .font(@base, @light, @white);
+  opacity: 0.5;
+}
+
+.card-value {
+  .font(@md, @bold, @white);
 }
 
 .mastercard-logo {
@@ -25,49 +57,16 @@
 }
 
 .mc-circle {
-  width: 32px;
-  height: 32px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  opacity: 0.8;
 
   &.mc-left {
-    background: #eb001b;
-    margin-right: -10px;
-    z-index: 1;
+    background: @red;
+    margin-right: -11px;
   }
 
   &.mc-right {
-    background: #f79e1b;
+    background: @orange;
   }
-}
-
-.card-number {
-  font-size: 18px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  margin-bottom: 28px;
-}
-
-.card-bottom {
-  display: flex;
-  gap: 32px;
-}
-
-.card-field {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.card-label {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  opacity: 0.6;
-}
-
-.card-value {
-  font-size: 14px;
-  font-weight: 500;
 }

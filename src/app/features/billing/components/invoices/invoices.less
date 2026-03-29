@@ -1,89 +1,68 @@
+@import (reference) "variables";
+
 :host {
   display: block;
-  background: white;
-  border-radius: var(--card-radius);
-  box-shadow: var(--drop-shadow-black);
-  padding: 20px 24px;
+  .card();
+  height: 100%;
+  padding: 25px;
 }
 
 .section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-}
-
-.section-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text-primary);
+  margin-bottom: 25px;
 }
 
 .btn-view-all {
-  padding: 6px 16px;
-  border: 1px solid var(--color-text-primary);
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-text-primary);
+  padding: 8px 16px;
+  border: 1px solid @red;
+  border-radius: var(--card-min-radius);
+  .font(@sm, @bold, @red);
+  text-transform: uppercase;
 }
 
 .invoices-list {
   display: flex;
   flex-direction: column;
+  gap: 25px;
 }
 
 .invoice-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--color-background);
-
-  &:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
 }
 
 .invoice-info {
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
 }
 
 .invoice-date {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-text-primary);
+  .label();
 }
 
 .invoice-number {
-  font-size: 12px;
-  color: var(--color-text-secondary);
+  .font(@sm);
 }
 
 .invoice-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 24px;
 }
 
 .invoice-amount {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--color-text-primary);
+  .caption();
 }
 
 .btn-pdf {
   display: flex;
   align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-red-orange);
+  gap: 10px;
+  .label();
 
-  .material-icons {
-    font-size: 16px !important;
+  .pdf-icon {
+    width: 16px;
+    height: 16px;
   }
 }

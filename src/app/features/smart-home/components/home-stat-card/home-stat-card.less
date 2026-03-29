@@ -2,37 +2,26 @@
 
 :host {
   display: block;
-}
-
-.card {
-  background: var(--color-white);
-  border-radius: var(--card-radius);
-  box-shadow: var(--drop-shadow-grey);
-  padding: 16px 20px 20px;
+  .card();
+  padding: 20px 20px 24px;
+  text-align: center;
 }
 
 .value {
-  font-size: @font-size-xxl;
-  font-weight: @font-weight-bold;
-  margin-bottom: 4px;
-
-  &.red { color: var(--color-red); }
-  &.blue { color: var(--color-blue); }
+  .font(@4xl, @bold, @red);
+  margin-bottom: 7px;
 }
 
 .unit {
-  font-size: @font-size-sm;
-  font-weight: @font-weight-normal;
-  vertical-align: super;
+  .font(@icon, @bold, @red);
+  vertical-align: baseline;
 }
 
 .label {
-  font-size: @font-size-base;
-  color: var(--color-text-primary);
+  .font(@md, @bold, @text-primary);
   margin-bottom: 2px;
 }
 
 .sublabel {
-  font-size: @font-size-sm;
-  color: var(--color-text-secondary);
+  .caption();
 }

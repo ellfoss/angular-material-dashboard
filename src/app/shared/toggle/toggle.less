@@ -26,12 +26,12 @@
   left: 0;
   right: 0;
   height: 15px;
-  background: var(--color-dark-snow);
+  background: @dark-snow;
   border-radius: 8px;
   transition: background 0.2s;
 
   .toggle input:checked ~ & {
-    background: var(--color-dark-mud);
+    background: @dark-mud;
   }
 }
 
@@ -42,14 +42,14 @@
   transform: translateY(-50%);
   width: 20px;
   height: 20px;
-  background: var(--color-white);
+  background: @white;
   border-radius: 50%;
-  border: 1px solid var(--color-dark-snow);
+  border: 1px solid @dark-snow;
   box-shadow: var(--drop-shadow-black);
   transition: transform 0.2s, border-color 0.2s;
 
   .toggle input:checked ~ .toggle-track & {
     transform: translateY(-50%) translateX(18px);
-    border-color: var(--color-dark-mud);
+    border-color: @dark-mud;
   }
 }

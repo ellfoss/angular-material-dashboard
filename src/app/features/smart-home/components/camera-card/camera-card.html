@@ -1,25 +1,16 @@
-<div class="card">
-  <div class="feed-wrapper">
-    <img class="feed" src="assets/images/header-background.png" alt="Camera feed" />
-    <span class="timestamp">17.05.2021 4:34PM</span>
-    <span class="recording">
-      <span class="dot"></span> RECORDING
-    </span>
+<div class="feed-wrapper">
+  <img class="feed" src="assets/images/camera-feed.png" alt="Camera feed" />
+  <span class="timestamp">17.05.2021 4:34PM</span>
+  <span class="recording">
+    <span class="dot"></span> RECORDING
+  </span>
+</div>
+<div class="card-footer">
+  <span class="cameras-label">Cameras</span>
+  <div class="footer-tabs">
+    <app-tabs [tabs]="tabs" />
   </div>
-  <div class="card-footer">
-    <span class="cameras-label">Cameras</span>
-    <div class="tabs">
-      @for (tab of tabs; track tab) {
-        <button
-          class="tab"
-          type="button"
-          [class.active]="tab === activeTab()"
-          (click)="activeTab.set(tab)"
-        >{{ tab }}</button>
-      }
-    </div>
-    <button class="more-btn" type="button">
-      <span class="material-icons">more_horiz</span>
-    </button>
-  </div>
+  <button class="more-btn" type="button">
+    <span class="material-icons">more_vert</span>
+  </button>
 </div>

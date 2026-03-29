@@ -1,7 +1,292 @@
+@import (reference) "variables";
+
 :host {
   display: block;
-  background: var(--gradient-black);
-  border-radius: var(--card-radius);
-  box-shadow: var(--drop-shadow-black);
+  .card(var(--gradient-black));
   overflow: hidden;
+}
+
+.info-panel {
+  padding: 24px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 395px;
+  height: 36px;
+  background: none;
+  border-bottom: 1px solid @dark-snow;
+
+  input {
+    flex: 1;
+    border: none;
+    background: none;
+    .font(@color: @white);
+    outline: none;
+    height: 100%;
+
+    &::placeholder {
+      color: @grey;
+    }
+  }
+
+  .material-icons {
+    font-size: @icon;
+    color: @grey;
+    flex-shrink: 0;
+  }
+}
+
+.gps-controls {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.controls-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  .material-icons {
+    font-size: @icon;
+    color: @white;
+    cursor: pointer;
+  }
+}
+
+.gps-time {
+  .font(@xxl, @bold, @white);
+}
+
+.info-divider {
+  height: 1px;
+  background: @dark-mud;
+  margin-top: 17px;
+  margin-bottom: 17px;
+}
+
+.gps-stats {
+  display: flex;
+  height: 45px;
+}
+
+.gps-stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  padding: 0 24px;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+
+  & + .gps-stat {
+    border-left: 1px solid @dark-mud;
+  }
+}
+
+.gps-value-wrap {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.gps-number {
+  .font(@3xl, @bold, @white);
+  line-height: 1;
+}
+
+.gps-unit {
+  .font(@weight: @bold, @color: @white);
+  vertical-align: super;
+  line-height: 1;
+}
+
+.gps-label {
+  .font(@md, @normal, @dark-snow);
+}
+
+.map-wrap {
+  height: 250px;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+}
+
+.player-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 22px;
+}
+
+.player-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.player-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: block;
+}
+
+.spotify-icon {
+  position: absolute;
+  right: -12px;
+  bottom: -7px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.track-title {
+  .font(@weight: @bold, @color: @white);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-subtitle {
+  .font(@sm, @normal, @grey);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.player-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.ctrl-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid @white;
+  cursor: pointer;
+  color: @white;
+  padding: 0;
+  transition: opacity @transition;
+  flex-shrink: 0;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  .material-icons {
+    font-size: @sm;
+  }
+}
+
+.volume-section {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.volume-label {
+  .font(@color: @white);
+  margin-bottom: 3px;
+}
+
+.volume-bar-wrap {
+  width: 186px;
+}
+
+.volume-track {
+  position: relative;
+  height: 2px;
+  background: @white;
+}
+
+.volume-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: @red;
+}
+
+.volume-thumb {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: @white;
+  border: 2px solid @red;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.player-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+  margin-left: 127px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: @white;
+  padding: 0;
+  transition: opacity @transition;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  .material-icons {
+    font-size: 24px;
+  }
 }

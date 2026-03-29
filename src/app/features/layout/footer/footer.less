@@ -1,22 +1,18 @@
-.footer {
+@import (reference) "variables";
+
+:host {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 0 8px;
-  font-size: 13px;
-  color: var(--color-text-secondary);
-
-  a {
-    color: var(--color-text-primary);
-    font-weight: 600;
-  }
+  padding: 42px 0 28px;
+  .caption();
 }
 
 .heart {
-  color: var(--color-red);
+  .font(@color: @red);
 }
 
 .footer-links {
   display: flex;
-  gap: 16px;
+  gap: 31px;
 }

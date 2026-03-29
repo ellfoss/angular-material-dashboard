@@ -1,38 +1,36 @@
 @import (reference) "variables";
 
 :host {
-  display: block;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: var(--card-radius);
-  padding: 16px 20px;
-}
-
-.weather-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  .card(var(--gradient-black));
+  padding: 16px;
 }
 
 .weather-label {
-  font-size: @font-size-sm;
-  color: var(--color-grey);
+  display: block;
+  .font(@weight: @bold, @color: @dark-snow);
+}
+
+.city-temp {
+  display: block;
+  .font(@lg, @bold, @white);
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .weather-icon {
-  width: 36px;
-  height: 36px;
+  width: 69px;
+  height: 51px;
   object-fit: contain;
 }
 
-.weather-city {
-  display: block;
-  .font-md-bold();
-  color: var(--color-white);
-  margin-bottom: 4px;
-}
-
-.weather-condition {
-  font-size: @font-size-sm;
-  color: var(--color-grey);
+.condition {
+  .font(@lg, @bold, @white);
+  margin-top: -1px;
 }

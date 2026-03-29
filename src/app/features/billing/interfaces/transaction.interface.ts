@@ -1,7 +1,7 @@
 export type TransactionType = 'positive' | 'negative' | 'pending';
 
 export interface ITransaction {
-  initial: string;
+  icon: string;
   color: string;
   name: string;
   date: string;

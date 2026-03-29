@@ -1,13 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import { NavbarComponent } from '../navbar/navbar';
 import { SidebarService } from '../../../core/services';
+import { FooterComponent } from '../footer/footer';
+import { NavbarComponent } from '../navbar/navbar';
 import { SidebarComponent } from '../sidebar/sidebar';
 
 @Component({
   selector: 'app-shell',
-  imports: [RouterOutlet, SidebarComponent, NavbarComponent],
+  imports: [FooterComponent, NavbarComponent, RouterOutlet, SidebarComponent],
   templateUrl: './shell.html',
   styleUrl: './shell.less',
 })

@@ -1,10 +1,16 @@
 import { Injectable } from '@angular/core';
 
+import { ITab } from '../../../shared';
 import { IBillingContact, IInvoice, IPaymentCard, ITransactionGroup } from '../interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class BillingDataService {
-  readonly tabs: string[] = ['Messages', 'Social', 'Notifications', 'Backup'];
+  readonly tabs: ITab[] = [
+    { id: 'messages', label: 'Messages' },
+    { id: 'social', label: 'Social' },
+    { id: 'notifications', label: 'Notifications' },
+    { id: 'backup', label: 'Backup' },
+  ];
 
   readonly paymentCards: IPaymentCard[] = [
     { brand: 'mastercard', last4: '7852' },

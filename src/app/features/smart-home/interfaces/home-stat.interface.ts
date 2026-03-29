@@ -3,5 +3,4 @@ export interface IHomeStatItem {
   readonly unit: string;
   readonly label: string;
   readonly sublabel: string;
-  readonly color: 'red' | 'blue';
 }

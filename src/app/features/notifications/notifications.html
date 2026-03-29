@@ -3,9 +3,9 @@
   <div class="alerts-list">
     @for (alert of alerts(); track alert.id) {
       @if (!alert.dismissed) {
-        <div class="alert" [ngClass]="'alert-' + alert.type">
+        <div class="alert" [ngStyle]="{ 'background': 'var(--color-' + alert.color + ')' }">
           <span class="alert-text">
-            A simple primary alert with an <a href="#" class="alert-link">example link</a>. Give it a click if you like.
+            A simple primary alert with an <a href="#">example link</a>. Give it a click if you like.
           </span>
           <button class="alert-dismiss" (click)="dismiss(alert.id)">
             <span class="material-icons">close</span>
@@ -14,7 +14,9 @@
       }
     }
   </div>
+</div>
 
+<div class="section-card">
   <h6 class="section-title">Notifications</h6>
   <p class="section-subtitle">
     Notifications on this page use Toast from Bootstrap. Read more details <a href="#" class="subtitle-link">here</a>.

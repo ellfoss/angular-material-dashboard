@@ -5,8 +5,18 @@ import { IAutomotiveStat, IChargeInfo, IGpsStat, ITrack, IWeather } from '../int
 @Injectable({ providedIn: 'root' })
 export class AutomotiveDataService {
   readonly chargeInfo: IChargeInfo = {
-    sinceLastCharge: { distance: '145 Km', energy: '300 Kw' },
-    nearestCharger: { location: 'Milan, DW', address: '891 Limarenda road' },
+    sinceLastCharge: {
+      title: 'Since Last Charge',
+      cols: [
+        { label: 'Distance', value: '145', unit: 'Km' },
+        { label: 'Average Energy', value: '300', unit: 'Kw' },
+      ],
+    },
+    nearestCharger: {
+      title: 'Nearest Charger',
+      locationName: 'Milan, DW',
+      locationAddress: '891 Limarenda road',
+    },
   };
 
   readonly weather: IWeather = {

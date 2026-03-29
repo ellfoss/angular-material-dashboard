@@ -1,42 +1,38 @@
-<div class="card">
-  <div class="card-header">
-    <h6 class="card-title">Top Selling Products</h6>
-  </div>
-  <div class="table-wrap">
-    <table class="table">
-      <thead>
+<h6 class="card-title">Top Selling Products</h6>
+<div class="table-wrap">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Value</th>
+        <th>Ads Spent</th>
+        <th>Refunds</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (product of products(); track product.name) {
         <tr>
-          <th>Product</th>
-          <th>Value</th>
-          <th>Ads Spent</th>
-          <th>Refunds</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (product of products(); track product.name) {
-          <tr>
-            <td>
-              <div class="product-cell">
-                <div class="product-avatar" [style.background]="'var(--gradient-' + product.gradient + ')'"></div>
-                <div class="product-info">
-                  <span class="product-name">{{ product.name }}</span>
-                  <span class="product-orders">{{ product.orders }}</span>
-                </div>
+          <td>
+            <div class="product-cell">
+              <img class="product-avatar" [src]="product.avatar" [alt]="product.name" />
+              <div class="product-info">
+                <span class="product-name">{{ product.name }}</span>
+                <span class="product-orders"><mark>{{ product.orders | number }}</mark> orders</span>
               </div>
-            </td>
-            <td>{{ product.value }}</td>
-            <td>{{ product.adsSpent }}</td>
-            <td>
-              <div class="refund-cell">
-                <span>{{ product.refunds }}</span>
-                <span class="material-icons refund-icon" [class.up]="product.refundUp" [class.down]="!product.refundUp">
+            </div>
+          </td>
+          <td>{{ product.value }}</td>
+          <td>{{ product.adsSpent }}</td>
+          <td>
+            <div class="refund-cell">
+              <span>{{ product.refunds }}</span>
+              <span class="material-icons refund-icon" [class.up]="product.refundUp" [class.down]="!product.refundUp">
                   {{ product.refundUp ? 'expand_less' : 'expand_more' }}
                 </span>
-              </div>
-            </td>
-          </tr>
-        }
-      </tbody>
-    </table>
-  </div>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
 </div>

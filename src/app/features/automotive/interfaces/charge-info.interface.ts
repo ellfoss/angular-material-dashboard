@@ -1,10 +1,21 @@
+export interface IInfoMetric {
+  label: string;
+  value: string;
+  unit: string;
+}
+
+export interface IMetricsBlock {
+  title: string;
+  cols: [IInfoMetric, IInfoMetric];
+}
+
+export interface ILocationBlock {
+  title: string;
+  locationName: string;
+  locationAddress: string;
+}
+
 export interface IChargeInfo {
-  sinceLastCharge: {
-    distance: string;
-    energy: string;
-  };
-  nearestCharger: {
-    location: string;
-    address: string;
-  };
+  sinceLastCharge: IMetricsBlock;
+  nearestCharger: ILocationBlock;
 }

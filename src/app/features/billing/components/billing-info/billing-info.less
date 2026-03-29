@@ -1,90 +1,72 @@
+@import (reference) "variables";
+
 :host {
+  height: 100%;
   display: block;
-  background: white;
-  border-radius: var(--card-radius);
-  box-shadow: var(--drop-shadow-black);
-  padding: 20px 24px;
+  .card();
+  padding: 26px 16px 22px;
 }
 
 .section-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text-primary);
-  margin-bottom: 16px;
+  margin-bottom: 26px;
 }
 
 .contacts-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 25px;
 }
 
 .contact-card {
-  padding: 16px 0;
-  border-bottom: 1px solid var(--color-background);
-
-  &:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
-  }
+  position: relative;
+  padding: 24px;
+  background: @cloud;
+  border-radius: var(--card-min-radius);
 }
 
 .contact-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-
-.contact-name {
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--color-text-primary);
-}
-
-.contact-actions {
-  display: flex;
-  gap: 12px;
-}
-
-.btn-delete {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-red-orange);
-
-  .material-icons {
-    font-size: 14px !important;
-  }
-}
-
-.btn-edit {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--color-text-secondary);
-
-  .material-icons {
-    font-size: 14px !important;
-  }
+  .label();
+  margin-bottom: 15px;
 }
 
 .contact-details {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 
   p {
-    font-size: 13px;
-    color: var(--color-text-secondary);
+    .font(@sm, @bold, @text-primary);
   }
 }
 
 .detail-label {
-  font-weight: 700;
-  color: var(--color-text-primary);
+  .font(@sm);
+}
+
+.contact-actions {
+  position: absolute;
+  right: 40px;
+  top: 35px;
+  display: flex;
+  gap: 34px;
+
+  > button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    .font(@sm, @bold);
+    text-transform: uppercase;
+
+    .material-icons {
+      font-size: @base;
+    }
+  }
+}
+
+.btn-delete {
+  color: @red-orange;
+}
+
+.btn-edit {
+  color: @text-primary;
 }

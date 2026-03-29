@@ -20,21 +20,30 @@
 
 .profile-card {
   position: relative;
-  background: var(--color-white);
-  border-radius: var(--card-radius);
-  box-shadow: var(--drop-shadow-grey);
+  .card(@shadow: var(--drop-shadow-grey));
   margin-top: -64px;
   margin-left: 24px;
   margin-right: 24px;
   min-height: 80px;
-  padding: 16px;
+  padding: 16px 16px 36px;
 }
 
 .info-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  column-gap: 25px;
   margin-top: 50px;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+app-projects {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+
+.col-divider {
+  background: @cloud;
 }
 
 .profile-row {
@@ -59,55 +68,20 @@
 }
 
 .profile-name {
-  font-size: @font-size-lg;
-  font-weight: @font-weight-bold;
-  color: var(--color-text-primary);
+  .font(@lg, @bold, @text-primary);
 }
 
 .profile-role {
-  font-size: @font-size-base;
-  font-weight: @font-weight-regular;
-  color: var(--color-text-primary);
+  .font(@color: @text-primary);
 }
 
-.tabs {
-  display: inline-flex;
-  background: var(--color-cloud);
-  border-radius: var(--card-min-radius);
-  padding: 4px 7px;
+app-tabs {
   margin-left: auto;
-}
-
-.tab {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  height: 34px;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: @font-size-md;
-  color: var(--color-text-primary);
-  transition: background 0.2s, color 0.2s;
-
-  .material-icons {
-    font-size: @font-size-icon;
-  }
-
-  &:hover {
-    background: var(--color-snow);
-  }
-
-  &.active {
-    background: white;
-    box-shadow: var(--drop-shadow-black);
-  }
 }
 
 .profile-header-timestamp {
   position: absolute;
   top: 18px;
   left: 33px;
-  font-size: @font-size-base;
-  font-weight: @font-weight-regular;
-  color: var(--color-white);
+  .font(@color: @white);
 }

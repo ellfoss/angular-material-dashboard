@@ -6,11 +6,11 @@
   <p class="project-description">{{ project().description }}</p>
 
   <div class="card-footer">
+    <button class="view-btn">VIEW PROJECT</button>
     <div class="participants">
       @for (avatar of project().participants; track avatar) {
         <img class="participant-avatar" [src]="avatar" [alt]="'participant'" />
       }
     </div>
-    <button class="view-btn">VIEW PROJECT</button>
   </div>
 </div>

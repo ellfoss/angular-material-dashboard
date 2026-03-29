@@ -8,6 +8,13 @@ import { SmartHomeDataService } from '../../services';
 
 Chart.register(DoughnutController, ArcElement, Tooltip);
 
+function resolveCssVar(value: string): string {
+  const match = value.match(/^var\((--[\w-]+)\)$/);
+  return match
+    ? getComputedStyle(document.documentElement).getPropertyValue(match[1]).trim()
+    : value;
+}
+
 @Component({
   selector: 'app-consumption-chart',
   imports: [ChartComponent],
@@ -25,19 +32,24 @@ export class ConsumptionChartComponent {
     data: {
       labels: this.items.map((i: IConsumptionItem): string => i.label),
       datasets: [{
-        data: this.items.map((i: IConsumptionItem): number => i.watts),
-        backgroundColor: this.items.map((i: IConsumptionItem): string => i.color),
-        borderWidth: 0,
+        data: this.items.map((i: IConsumptionItem): number => i.percentage),
+        backgroundColor: this.items.map((i: IConsumptionItem): string => resolveCssVar(i.color)),
+        borderWidth: 5,
         hoverOffset: 4,
       }],
     },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      cutout: '80%',
+      cutout: '90%',
       plugins: {
         legend: { display: false },
-        tooltip: { enabled: true },
+        tooltip: {
+          enabled: true,
+          callbacks: {
+            label: (item): string => ` ${item.formattedValue}%`,
+          },
+        },
       },
     },
   };

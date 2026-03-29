@@ -1,40 +1,17 @@
-<div class="billing-layout">
+<app-tabs [tabs]="tabs" />
 
-  <div class="billing-left">
-
-    <div class="top-row">
+<div class="top-section">
+  <div class="top-left">
+    <div class="card-widgets">
       <app-credit-card />
-      <div class="payment-widgets">
-        <div class="widget-card">
-          <div class="widget-icon" style="background: var(--gradient-red)">
-            <span class="material-icons">account_balance_wallet</span>
-          </div>
-          <div class="widget-body">
-            <p class="widget-title">Salary</p>
-            <p class="widget-subtitle">Belong Interactive</p>
-            <p class="widget-amount">+$2000</p>
-          </div>
-        </div>
-        <div class="widget-card">
-          <div class="widget-icon" style="background: var(--gradient-red)">
-            <span class="material-icons">payment</span>
-          </div>
-          <div class="widget-body">
-            <p class="widget-title">PayPal</p>
-            <p class="widget-amount">$455</p>
-          </div>
-        </div>
-      </div>
+      <app-payment-widgets />
     </div>
-
     <app-payment-method [cards]="paymentCards" />
-    <app-billing-info [contacts]="contacts" />
-
   </div>
+  <app-invoices [invoices]="invoices" />
+</div>
 
-  <div class="billing-right">
-    <app-invoices [invoices]="invoices" />
-    <app-transactions [groups]="transactionGroups" />
-  </div>
-
+<div class="bottom-row">
+  <app-billing-info [contacts]="contacts" />
+  <app-transactions [groups]="transactionGroups" />
 </div>

@@ -1,2 +1,73 @@
-<app-gps-panel />
-<app-music-player />
+<div class="info-panel">
+  <div class="info-row">
+    <div class="search-bar">
+      <input placeholder="Search anything..." />
+      <span class="material-icons">search</span>
+    </div>
+    <div class="gps-controls">
+      <div class="controls-icons">
+        <span class="material-icons">headset</span>
+        <span class="material-icons">location_on</span>
+        <span class="material-icons">settings</span>
+      </div>
+      <span class="gps-time">10:45</span>
+    </div>
+  </div>
+  <div class="info-divider"></div>
+  <div class="gps-stats">
+    @for (stat of gpsStats; track stat.label) {
+      <div class="gps-stat">
+        <div class="gps-value-wrap">
+          <span class="gps-number">{{ stat.value }}</span>
+          @if (stat.unit) {
+            <span class="gps-unit">{{ stat.unit }}</span>
+          }
+        </div>
+        <span class="gps-label">{{ stat.label }}</span>
+      </div>
+    }
+  </div>
+</div>
+<div class="map-wrap">
+  <iframe [src]="mapUrl" loading="lazy" title="Map"></iframe>
+</div>
+<div class="player-section">
+  <div class="player-left">
+    <div class="avatar-wrap">
+      <img class="player-avatar" src="/assets/images/player-avatar.png" alt="Artist" />
+      <img class="spotify-icon" src="/assets/images/spotify-icon.png" alt="Spotify" />
+    </div>
+    <div class="track-info">
+      <span class="track-title">{{ track.title }}</span>
+      <span class="track-subtitle">{{ track.artist }} - {{ track.subtitle }}</span>
+    </div>
+  </div>
+  <div class="player-center">
+    <button class="ctrl-btn">
+      <span class="material-icons">skip_previous</span>
+    </button>
+    <button class="ctrl-btn play-btn" (click)="togglePlay()">
+      <span class="material-icons">{{ playing() ? 'pause' : 'play_arrow' }}</span>
+    </button>
+    <button class="ctrl-btn">
+      <span class="material-icons">skip_next</span>
+    </button>
+  </div>
+  <div class="volume-section">
+    <span class="volume-label">Volume</span>
+    <div class="volume-bar-wrap">
+      <div class="volume-track">
+        <div class="volume-fill" [style.width.%]="volume()"></div>
+        <div class="volume-thumb" [style.left.%]="volume()"></div>
+      </div>
+    </div>
+  </div>
+  <div class="player-actions">
+    <button class="action-btn">
+      <span class="material-icons">menu</span>
+    </button>
+    <button class="action-btn">
+      <span class="material-icons">chat</span>
+    </button>
+  </div>
+</div>

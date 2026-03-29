@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
-import { IProfileInfoRow } from '../../interfaces';
+import { ProfileDataService } from '../../services';
 
 @Component({
   selector: 'app-profile-info',
@@ -9,10 +9,6 @@ import { IProfileInfoRow } from '../../interfaces';
   styleUrl: './profile-info.less',
 })
 export class ProfileInfoComponent {
-  readonly infoRows: IProfileInfoRow[] = [
-    { label: 'Full Name:', value: 'Alec M. Thompson' },
-    { label: 'Mobile:', value: '(44) 123 1234 123' },
-    { label: 'Email:', value: 'alecthompson@mail.com' },
-    { label: 'Location:', value: 'USA' },
-  ];
+  private readonly profileData: ProfileDataService = inject(ProfileDataService);
+  readonly infoRows = this.profileData.infoRows;
 }

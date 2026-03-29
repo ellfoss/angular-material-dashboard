@@ -2,23 +2,21 @@
 <div class="contacts-list">
   @for (contact of contacts(); track contact.name) {
     <div class="contact-card">
-      <div class="contact-header">
-        <span class="contact-name">{{ contact.name }}</span>
-        <div class="contact-actions">
-          <button class="btn-delete">
-            <span class="material-icons">delete</span>
-            Delete
-          </button>
-          <button class="btn-edit">
-            <span class="material-icons">edit</span>
-            Edit
-          </button>
-        </div>
-      </div>
+      <div class="contact-header">{{ contact.name }}</div>
       <div class="contact-details">
         <p><span class="detail-label">Company Name:</span> {{ contact.company }}</p>
         <p><span class="detail-label">Email Address:</span> {{ contact.email }}</p>
         <p><span class="detail-label">VAT Number:</span> {{ contact.vatNumber }}</p>
+      </div>
+      <div class="contact-actions">
+        <button class="btn-delete">
+          <span class="material-icons">delete</span>
+          Delete
+        </button>
+        <button class="btn-edit">
+          <span class="material-icons">edit</span>
+          Edit
+        </button>
       </div>
     </div>
   }
