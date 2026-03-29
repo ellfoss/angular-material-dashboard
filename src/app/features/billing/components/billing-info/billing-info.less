@@ -1,0 +1,90 @@
+:host {
+  display: block;
+  background: white;
+  border-radius: var(--card-radius);
+  box-shadow: var(--drop-shadow-black);
+  padding: 20px 24px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+}
+
+.contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.contact-card {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--color-background);
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.contact-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.contact-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-delete {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-red-orange);
+
+  .material-icons {
+    font-size: 14px !important;
+  }
+}
+
+.btn-edit {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+
+  .material-icons {
+    font-size: 14px !important;
+  }
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  p {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+  }
+}
+
+.detail-label {
+  font-weight: 700;
+  color: var(--color-text-primary);
+}

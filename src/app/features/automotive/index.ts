@@ -1,0 +1,1 @@
+export { AutomotiveComponent } from './automotive';

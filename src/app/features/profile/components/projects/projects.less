@@ -1,0 +1,28 @@
+@import (reference) "variables";
+
+:host {
+  display: block;
+  margin-top: 24px;
+}
+
+.projects-header {
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: @font-size-md;
+  font-weight: @font-weight-bold;
+  color: var(--color-text-primary);
+}
+
+.section-subtitle {
+  font-size: @font-size-sm;
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}

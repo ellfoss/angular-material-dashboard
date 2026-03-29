@@ -1,0 +1,41 @@
+<div>
+  <div class="navbar-info">
+    <nav class="breadcrumbs" aria-label="breadcrumb">
+      <span class="material-icons breadcrumb-home">home</span>
+      @for (crumb of breadcrumb(); track crumb; let last = $last) {
+        <span class="breadcrumb-sep">/</span>
+        @if (!last) {
+          <span class="breadcrumb-item">{{ crumb }}</span>
+        } @else {
+          <span class="breadcrumb-item active">{{ crumb }}</span>
+        }
+      }
+    </nav>
+    <h6 class="page-title">{{ pageTitle() }}</h6>
+  </div>
+
+  <button class="nav-action" title="Menu" (click)="toggleSidebar()">
+    <span class="material-icons">menu</span>
+  </button>
+</div>
+
+<div>
+  <div class="search-wrap">
+    <input class="search-input" type="text" placeholder="Search here">
+  </div>
+
+  <div class="nav-actions">
+    <button title="Sign In" routerLink="/sign-in">
+      <span class="material-icons">account_circle</span>
+    </button>
+
+    <button title="Settings">
+      <span class="material-icons">settings</span>
+    </button>
+
+    <button title="Notifications">
+      <span class="material-icons">notifications</span>
+      <span class="nav-badge">11</span>
+    </button>
+  </div>
+</div>

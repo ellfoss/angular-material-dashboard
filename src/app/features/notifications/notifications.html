@@ -1,0 +1,39 @@
+<div class="section-card">
+  <h6 class="section-title">Alerts</h6>
+  <div class="alerts-list">
+    @for (alert of alerts(); track alert.id) {
+      @if (!alert.dismissed) {
+        <div class="alert" [ngClass]="'alert-' + alert.type">
+          <span class="alert-text">
+            A simple primary alert with an <a href="#" class="alert-link">example link</a>. Give it a click if you like.
+          </span>
+          <button class="alert-dismiss" (click)="dismiss(alert.id)">
+            <span class="material-icons">close</span>
+          </button>
+        </div>
+      }
+    }
+  </div>
+
+  <h6 class="section-title">Notifications</h6>
+  <p class="section-subtitle">
+    Notifications on this page use Toast from Bootstrap. Read more details <a href="#" class="subtitle-link">here</a>.
+  </p>
+  <div class="notification-buttons">
+    <button class="btn-notify btn-notify-success" (click)="showToast('success')">SUCCESS</button>
+    <button class="btn-notify btn-notify-info" (click)="showToast('info')">INFO</button>
+    <button class="btn-notify btn-notify-warning" (click)="showToast('warning')">WARNING</button>
+    <button class="btn-notify btn-notify-danger" (click)="showToast('danger')">DANGER</button>
+  </div>
+</div>
+
+<div class="toasts-container">
+  @for (toast of toasts(); track toast.id) {
+    <div class="toast" [ngClass]="'toast-' + toast.type">
+      <span class="toast-message">{{ toast.message }}</span>
+      <button class="toast-close" (click)="dismissToast(toast.id)">
+        <span class="material-icons">close</span>
+      </button>
+    </div>
+  }
+</div>

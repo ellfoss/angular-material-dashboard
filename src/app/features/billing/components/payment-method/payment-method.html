@@ -1,0 +1,27 @@
+<div class="section-header">
+  <h6 class="section-title">Payment Method</h6>
+  <button class="btn-add">
+    <span class="material-icons">add</span>
+    Add New Card
+  </button>
+</div>
+<div class="cards-list">
+  @for (card of cards(); track card.last4) {
+    <div class="card-row">
+      <div class="card-brand">
+        @if (card.brand === 'mastercard') {
+          <div class="brand-mc">
+            <div class="mc-circle mc-left"></div>
+            <div class="mc-circle mc-right"></div>
+          </div>
+        } @else {
+          <span class="brand-visa">VISA</span>
+        }
+      </div>
+      <span class="card-number">•••• •••• •••• {{ card.last4 }}</span>
+      <button class="btn-edit">
+        <span class="material-icons">edit</span>
+      </button>
+    </div>
+  }
+</div>

@@ -1,0 +1,6 @@
+<app-auto-weather-card [weather]="weather" />
+<div class="stats-grid">
+  @for (stat of stats; track stat.icon) {
+    <app-vehicle-stat-card [stat]="stat" />
+  }
+</div>

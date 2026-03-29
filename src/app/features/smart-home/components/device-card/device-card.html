@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-top">
+    <span class="state-label">{{ device().active ? 'On' : 'Off' }}</span>
+    <span class="toggle-hit" (click)="toggle.emit()">
+      <app-toggle [checked]="device().active" />
+    </span>
+  </div>
+  <div class="card-body">
+    <span class="material-icons device-icon">{{ device().icon }}</span>
+    <p class="device-name">{{ device().name }}</p>
+    <p class="device-status">{{ device().status }}</p>
+  </div>
+</div>

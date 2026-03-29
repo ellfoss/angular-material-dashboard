@@ -1,0 +1,19 @@
+<div class="card-chart-wrapper"
+  [style.background]="'var(--gradient-' + card().color + ')'"
+  [style.box-shadow]="'var(--drop-shadow-' + card().color + ')'">
+  <app-chart [config]="chartConfig()" />
+</div>
+<div class="chart-info">
+  <h6 class="chart-title">{{ card().title }}</h6>
+  <p class="chart-subtitle">
+    @if (card().subtitleHighlight) {
+      <span class="positive">{{ card().subtitleHighlight }}</span>
+    }
+    {{ card().subtitle }}
+  </p>
+  <div class="chart-divider"></div>
+  <p class="chart-meta">
+    <span class="material-icons">schedule</span>
+    {{ card().meta }}
+  </p>
+</div>

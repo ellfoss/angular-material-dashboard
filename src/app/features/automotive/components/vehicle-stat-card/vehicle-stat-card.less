@@ -1,0 +1,44 @@
+@import (reference) "variables";
+
+:host {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--card-min-radius);
+  padding: 12px 14px;
+}
+
+.stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--card-min-radius);
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+
+  .material-icons {
+    font-size: @font-size-icon;
+    color: var(--color-white);
+  }
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.stat-label {
+  font-size: @font-size-xs;
+  color: var(--color-grey);
+}
+
+.stat-value {
+  font-size: @font-size-base;
+  font-weight: @font-weight-bold;
+  color: var(--color-white);
+}

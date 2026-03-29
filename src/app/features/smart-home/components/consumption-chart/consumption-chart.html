@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="section-header">
+    <h6 class="section-title">Consumption by room</h6>
+    <button class="info-btn" type="button">
+      <span class="material-icons">info</span>
+    </button>
+  </div>
+  <div class="content">
+    <div class="chart-wrapper">
+      <app-chart [config]="chartConfig" />
+      <div class="chart-center">
+        <p class="total-value">{{ total }}</p>
+        <p class="total-unit">watts</p>
+      </div>
+    </div>
+    <ul class="legend">
+      @for (item of items; track item.label) {
+        <li class="legend-item">
+          <span class="legend-dot" [style.background]="item.color"></span>
+          <span class="legend-label">{{ item.label }}</span>
+          <span class="legend-pct">{{ item.percentage }}%</span>
+        </li>
+      }
+    </ul>
+  </div>
+</div>

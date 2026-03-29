@@ -1,0 +1,16 @@
+<img class="card-image" [src]="project().image" [alt]="project().name" />
+
+<div class="card-body">
+  <p class="project-number">Project #{{ project().number }}</p>
+  <h6 class="project-name">{{ project().name }}</h6>
+  <p class="project-description">{{ project().description }}</p>
+
+  <div class="card-footer">
+    <div class="participants">
+      @for (avatar of project().participants; track avatar) {
+        <img class="participant-avatar" [src]="avatar" [alt]="'participant'" />
+      }
+    </div>
+    <button class="view-btn">VIEW PROJECT</button>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="car-image-wrap">
+  <img class="car-image" src="/assets/images/car.png" alt="Electric Car" />
+</div>
+<div class="info-row">
+  <div class="info-block">
+    <span class="block-title">Since Last Charge</span>
+    <div class="metrics">
+      <div class="metric">
+        <span class="metric-label">Distance</span>
+        <span class="metric-value">{{ chargeInfo.sinceLastCharge.distance }}</span>
+      </div>
+      <div class="metric">
+        <span class="metric-label">Average Energy</span>
+        <span class="metric-value">{{ chargeInfo.sinceLastCharge.energy }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="info-divider"></div>
+  <div class="info-block">
+    <span class="block-title">Nearest Charger</span>
+    <div class="charger-row">
+      <div class="charger-text">
+        <span class="charger-location">{{ chargeInfo.nearestCharger.location }}</span>
+        <span class="charger-address">{{ chargeInfo.nearestCharger.address }}</span>
+      </div>
+      <button class="nav-btn">
+        <span class="material-icons">navigation</span>
+      </button>
+    </div>
+  </div>
+</div>

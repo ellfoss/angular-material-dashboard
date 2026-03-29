@@ -1,0 +1,124 @@
+@import (reference) "variables";
+
+:host {
+  display: flex;
+  flex-direction: column;
+}
+
+.car-image-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  padding: 8px 0 20px;
+}
+
+.car-image {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain;
+}
+
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-block {
+  flex: 1;
+  padding: 0 20px;
+
+  &:first-child {
+    padding-left: 0;
+  }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.block-title {
+  display: block;
+  font-size: @font-size-sm;
+  color: var(--color-grey);
+  margin-bottom: 8px;
+}
+
+.metrics {
+  display: flex;
+  gap: 24px;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metric-label {
+  font-size: @font-size-sm;
+  color: var(--color-grey);
+}
+
+.metric-value {
+  font-size: @font-size-xl;
+  font-weight: @font-weight-bold;
+  color: var(--color-white);
+}
+
+.info-divider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  align-self: stretch;
+  flex-shrink: 0;
+}
+
+.charger-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.charger-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.charger-location {
+  font-size: @font-size-base;
+  font-weight: @font-weight-bold;
+  color: var(--color-white);
+}
+
+.charger-address {
+  font-size: @font-size-sm;
+  color: var(--color-grey);
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  color: var(--color-white);
+  flex-shrink: 0;
+  transition: background @transition-default;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .material-icons {
+    font-size: @font-size-icon;
+  }
+}

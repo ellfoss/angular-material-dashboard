@@ -1,0 +1,92 @@
+<aside class="sidebar">
+  <div class="sidebar-brand">
+    <img src="/assets/images/logo.svg" class="brand-logo" alt="logo">
+    <span class="brand-name">Material Dashboard 2 PRO</span>
+  </div>
+
+  <hr class="sidebar-divider">
+
+  <div class="sidebar-user">
+    <img src="/assets/images/profile-picture.svg" class="user-avatar" alt="Brooklyn Alice">
+    <span class="user-name">Brooklyn Alice</span>
+    <span class="material-icons user-chevron">expand_more</span>
+  </div>
+
+  <hr class="sidebar-divider">
+
+  @for (section of sections; track $index) {
+    @if (section.hasDivider) {
+      <hr class="sidebar-divider">
+    }
+    @if (section.title) {
+      <p class="section-title">{{ section.title }}</p>
+    }
+
+    <nav class="sidebar-nav">
+      @for (item of section.items; track item.label) {
+
+        @if (item.children !== undefined) {
+          <div class="nav-group">
+            <button
+              class="nav-item"
+              [class.group-active]="isGroupActive(item)"
+              (click)="toggle(item)"
+            >
+              <span class="nav-icon-wrap" [class.icon-gradient]="isGroupActive(item)">
+                @if (item.icon) {
+                  <span class="material-icons">{{ item.icon }}</span>
+                } @else if (item.letter) {
+                  <span class="nav-letter">{{ item.letter }}</span>
+                }
+              </span>
+              <span class="nav-label">{{ item.label }}</span>
+              @if (item.children.length > 0) {
+                <span class="material-icons nav-chevron" [class.rotated]="item.expanded">expand_more</span>
+              }
+            </button>
+
+            @if (item.expanded && item.children.length > 0) {
+              <div class="nav-children">
+                @for (child of item.children; track child.label) {
+                  <a
+                    class="nav-item nav-child"
+                    [routerLink]="child.route"
+                    routerLinkActive="child-active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                  >
+                    <span class="nav-icon-wrap">
+                      @if (child.icon) {
+                        <span class="material-icons">{{ child.icon }}</span>
+                      } @else if (child.letter) {
+                        <span class="nav-letter">{{ child.letter }}</span>
+                      }
+                    </span>
+                    <span class="nav-label">{{ child.label }}</span>
+                  </a>
+                }
+              </div>
+            }
+          </div>
+
+        } @else {
+          <a
+            class="nav-item"
+            [routerLink]="item.route"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <span class="nav-icon-wrap">
+              @if (item.icon) {
+                <span class="material-icons">{{ item.icon }}</span>
+              } @else if (item.letter) {
+                <span class="nav-letter">{{ item.letter }}</span>
+              }
+            </span>
+            <span class="nav-label">{{ item.label }}</span>
+          </a>
+        }
+
+      }
+    </nav>
+  }
+</aside>

@@ -1,0 +1,11 @@
+<div class="weather">
+  <div class="left">
+    <p class="today-label">Weather Today</p>
+    <p class="city-temp">{{ weather.city }} - {{ weather.temperature }}°C</p>
+  </div>
+  <div class="right">
+    <img class="weather-icon" src="/assets/images/weather-sunny.png" alt="Sunny" />
+    <span class="condition">{{ weather.condition }}</span>
+  </div>
+</div>
+<app-chart class="chart-wrapper" [config]="chartConfig" />

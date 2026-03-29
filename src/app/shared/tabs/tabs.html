@@ -1,0 +1,15 @@
+<div class="tabs">
+  @for (tab of tabs(); track tab.id; let i = $index) {
+    <button
+      class="tab"
+      type="button"
+      [class.active]="tab.id === activeId()"
+      (click)="select(tab, i)"
+    >
+      @if (tab.icon) {
+        <span class="material-icons">{{ tab.icon }}</span>
+      }
+      {{ tab.label }}
+    </button>
+  }
+</div>

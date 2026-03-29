@@ -1,0 +1,69 @@
+@import (reference) "variables";
+
+:host {
+  display: block;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: @font-size-md;
+  font-weight: @font-weight-bold;
+  color: var(--color-text-primary);
+}
+
+.edit-icon {
+  font-size: @font-size-xl;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+}
+
+.bio {
+  font-size: @font-size-base;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-medium-grey);
+  margin-bottom: 16px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  & + & {
+    margin-top: 12px;
+  }
+}
+
+.info-label {
+  font-size: @font-size-base;
+  font-weight: @font-weight-bold;
+  color: var(--color-text-primary);
+}
+
+.info-value {
+  font-size: @font-size-base;
+  color: var(--color-text-secondary);
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}

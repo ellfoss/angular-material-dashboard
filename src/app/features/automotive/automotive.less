@@ -1,0 +1,32 @@
+:host {
+  display: block;
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 24px;
+  background: var(--gradient-black);
+  border-radius: var(--card-radius);
+  padding: 24px;
+  margin-bottom: 24px;
+
+  > * {
+    min-width: 0;
+  }
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gps-section {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.music-section {
+  display: block;
+}

@@ -1,0 +1,7 @@
+@for (device of devices(); track device.id) {
+  <app-device-card [device]="device" (toggle)="onToggle(device.id)" />
+}
+<div class="new-device-card">
+  <span class="material-icons add-icon">add</span>
+  <span class="new-label">New device</span>
+</div>

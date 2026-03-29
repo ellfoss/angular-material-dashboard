@@ -1,0 +1,31 @@
+<div class="section-header">
+  <h6 class="section-title">Your Transaction's</h6>
+  <div class="date-range">
+    <span class="material-icons">date_range</span>
+    23–30 March 2020
+  </div>
+</div>
+<div class="groups">
+  @for (group of groups(); track group.label) {
+    <div class="group">
+      <p class="group-label">{{ group.label }}</p>
+      @for (item of group.items; track item.name) {
+        <div class="transaction-row">
+          <div class="transaction-icon" [style.background]="item.color">
+            {{ item.initial }}
+          </div>
+          <div class="transaction-info">
+            <span class="transaction-name">{{ item.name }}</span>
+            <span class="transaction-date">{{ item.date }}</span>
+          </div>
+          <span
+            class="transaction-amount"
+            [class.positive]="item.type === 'positive'"
+            [class.negative]="item.type === 'negative'"
+            [class.pending]="item.type === 'pending'"
+          >{{ item.amount }}</span>
+        </div>
+      }
+    </div>
+  }
+</div>

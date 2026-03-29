@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --font-family: 'Inter', sans-serif;
+
+  --color-bg: #f0f2f5;
+  --color-white: #ffffff;
+  --color-text-primary: #344767;
+  --color-text-secondary: #7b809a;
+  --color-text-light: #aaabb8;
+
+  --sidebar-width: 250px;
+  --sidebar-bg-from: #42424a;
+  --sidebar-bg-to: #191919;
+
+  --gradient-pink: linear-gradient(195deg, #ec407a, #d81b60);
+  --gradient-dark: linear-gradient(195deg, #42424a, #191919);
+  --gradient-success: linear-gradient(195deg, #66bb6a, #43a047);
+  --gradient-info: linear-gradient(195deg, #26c6da, #00acc1);
+  --gradient-warning: linear-gradient(195deg, #ffa726, #fb8c00);
+  --gradient-primary: linear-gradient(195deg, #49a3f1, #1a73e8);
+
+  --card-radius: 12px;
+  --card-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.16);
+  --card-shadow-lg: 0 8px 26px -4px rgba(20, 20, 20, 0.15), 0 4px 10px -4px rgba(20, 20, 20, 0.04);
+  --navbar-height: 74px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-family);
+}
+
+.material-icons {
+  font-size: 18px;
+  line-height: 1;
+  vertical-align: middle;
+}

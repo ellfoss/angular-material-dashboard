@@ -1,0 +1,67 @@
+@import (reference) "variables";
+
+:host {
+  display: block;
+
+  &.active .card {
+    background: var(--gradient-red);
+    box-shadow: var(--drop-shadow-red);
+  }
+
+  &.active .state-label,
+  &.active .device-name,
+  &.active .device-status {
+    color: var(--color-white);
+  }
+
+  &.active .device-icon {
+    color: var(--color-white);
+  }
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--card-radius);
+  box-shadow: var(--drop-shadow-grey);
+  padding: 16px;
+  transition: background @transition-default, box-shadow @transition-default;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.state-label {
+  font-size: @font-size-sm;
+  color: var(--color-text-secondary);
+}
+
+.toggle-hit {
+  cursor: pointer;
+  display: flex;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.device-icon {
+  font-size: @font-size-xxl;
+  color: var(--color-text-primary);
+}
+
+.device-name {
+  font-size: @font-size-base;
+  font-weight: @font-weight-bold;
+  color: var(--color-text-primary);
+}
+
+.device-status {
+  font-size: @font-size-sm;
+  color: var(--color-text-secondary);
+}

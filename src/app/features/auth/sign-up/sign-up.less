@@ -1,0 +1,134 @@
+@import (reference) "variables";
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background: var(--color-background);
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.image-panel {
+  width: 50%;
+  padding: 24px 0 24px 24px;
+  box-sizing: border-box;
+}
+
+.illustration {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--card-radius);
+  display: block;
+}
+
+.form-panel {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.form-wrapper {
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-size: @font-size-xxl;
+  font-weight: @font-weight-bold;
+  color: var(--color-text-primary);
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: @font-size-sm;
+  color: var(--color-blue);
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-dark-snow);
+  border-radius: var(--card-min-radius);
+  font-size: @font-size-base;
+  color: var(--color-text-primary);
+  outline: none;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: var(--color-text-secondary);
+  }
+
+  &:focus {
+    border-color: var(--color-light-grey);
+  }
+}
+
+.agree-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+app-toggle {
+  margin-left: 4px;
+}
+
+.agree-label {
+  font-size: @font-size-sm;
+  color: var(--color-text-secondary);
+}
+
+.agree-link {
+  color: var(--color-text-primary);
+  font-weight: @font-weight-bold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.sign-up-btn {
+  margin-top: 10px;
+  width: 100%;
+  height: 40px;
+  background: var(--gradient-red);
+  border: none;
+  border-radius: var(--card-min-radius);
+  color: var(--color-white);
+  font-size: @font-size-sm;
+  font-weight: @font-weight-bold;
+  cursor: pointer;
+  box-shadow: var(--drop-shadow-red);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.signin-text {
+  text-align: center;
+  font-size: @font-size-base;
+  color: var(--color-text-secondary);
+}
+
+.signin-link {
+  color: var(--color-red);
+  font-weight: @font-weight-bold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

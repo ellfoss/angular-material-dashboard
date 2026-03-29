@@ -1,0 +1,7 @@
+<div class="card">
+  <p class="value" [class.red]="item().color === 'red'" [class.blue]="item().color === 'blue'">
+    {{ item().value }}<sup class="unit">{{ item().unit }}</sup>
+  </p>
+  <p class="label">{{ item().label }}</p>
+  <p class="sublabel">{{ item().sublabel }}</p>
+</div>

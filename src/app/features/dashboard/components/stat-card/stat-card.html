@@ -1,0 +1,16 @@
+<div class="stat-icon" [style.background]="stat.gradient">
+  <span class="material-icons">{{ stat.icon }}</span>
+</div>
+<div class="stat-body">
+  <p class="stat-label">{{ stat.label }}</p>
+  <h4 class="stat-value">{{ stat.value }}</h4>
+</div>
+<div class="stat-delimeter"></div>
+<div class="stat-footer">
+  @if (stat.change) {
+    <span [class]="stat.changePositive ? 'stat-change positive' : 'stat-change negative'">
+        {{ stat.change }}
+      </span>
+  }
+  <span>{{ stat.period }}</span>
+</div>

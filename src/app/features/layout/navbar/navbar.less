@@ -1,0 +1,131 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  height: 90px;
+  padding: 24px 17px 24px 21px;
+  margin: 0 -8px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--color-bg);
+
+  > div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    height: 100%;
+  }
+}
+
+.navbar-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 248px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.breadcrumb-home {
+  font-size: 14px !important;
+  color: var(--color-text-secondary);
+}
+
+.breadcrumb-item {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+
+  &.active {
+    color: var(--color-text-primary);
+    font-weight: 500;
+  }
+}
+
+.breadcrumb-sep {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+}
+
+.page-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  line-height: 1;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.search-input {
+  border: 1px solid var(--color-grey);
+  border-radius: 8px;
+  padding: 0 12px;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  background: transparent;
+  outline: none;
+  width: 160px;
+  height: 100%;
+  transition: border-color 0.2s;
+
+  &:focus {
+    border-color: var(--color-light-grey);
+  }
+
+  &::placeholder {
+    color: var(--color-grey);
+  }
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding-left: 4px;
+
+  > button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    color: var(--color-text-secondary);
+    transition: background 0.15s, color 0.15s;
+    position: relative;
+
+    &:hover {
+      background: var(--color-background);
+      color: var(--color-text-primary);
+    }
+
+    .material-icons {
+      font-size: 18px !important;
+    }
+  }
+}
+
+.nav-badge {
+  position: absolute;
+  top: 4px;
+  right: 0;
+  background: var(--color-red);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  border-radius: 8px;
+  min-width: 16px;
+  text-align: center;
+}

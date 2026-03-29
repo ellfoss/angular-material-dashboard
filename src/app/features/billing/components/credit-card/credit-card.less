@@ -1,0 +1,73 @@
+:host {
+  display: block;
+  background: var(--gradient-black);
+  border-radius: var(--card-radius);
+  box-shadow: var(--drop-shadow-black);
+  padding: 24px;
+  color: white;
+  min-width: 280px;
+}
+
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.wifi-icon {
+  font-size: 28px !important;
+  opacity: 0.8;
+}
+
+.mastercard-logo {
+  display: flex;
+}
+
+.mc-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  opacity: 0.8;
+
+  &.mc-left {
+    background: #eb001b;
+    margin-right: -10px;
+    z-index: 1;
+  }
+
+  &.mc-right {
+    background: #f79e1b;
+  }
+}
+
+.card-number {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  margin-bottom: 28px;
+}
+
+.card-bottom {
+  display: flex;
+  gap: 32px;
+}
+
+.card-field {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.6;
+}
+
+.card-value {
+  font-size: 14px;
+  font-weight: 500;
+}

@@ -1,0 +1,21 @@
+<div class="section-header">
+  <h6 class="section-title">Invoices</h6>
+  <button class="btn-view-all">View All</button>
+</div>
+<div class="invoices-list">
+  @for (invoice of invoices(); track invoice.number) {
+    <div class="invoice-row">
+      <div class="invoice-info">
+        <span class="invoice-date">{{ invoice.date }}</span>
+        <span class="invoice-number">{{ invoice.number }}</span>
+      </div>
+      <div class="invoice-right">
+        <span class="invoice-amount">{{ invoice.amount }}</span>
+        <button class="btn-pdf">
+          <span class="material-icons">picture_as_pdf</span>
+          PDF
+        </button>
+      </div>
+    </div>
+  }
+</div>
