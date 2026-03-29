@@ -6,12 +6,14 @@
 
 ## Скриншоты
 
-<!-- TODO: добавить скриншоты после деплоя -->
-<!-- Пример:
-![Dashboard](docs/screenshots/dashboard.png)
-![Smart Home](docs/screenshots/smart-home.png)
-![Automotive](docs/screenshots/automotive.png)
--->
+![Dashboard](public/assets/screenshots/dashboard.png)
+![Smart Home](public/assets/screenshots/smart-home.png)
+![Automotive](public/assets/screenshots/automotive.png)
+![Billing](public/assets/screenshots/billing.png)
+![Profile](public/assets/screenshots/profile.png)
+![Notifications](public/assets/screenshots/notifications.png)
+![Sign In](public/assets/screenshots/sign-in.png)
+![Sign Up](public/assets/screenshots/sign-up.png)
 
 ## Страницы
 
